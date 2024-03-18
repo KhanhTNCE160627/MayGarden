@@ -1,4 +1,4 @@
-/*
+  /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -21,10 +21,23 @@ public class Product {
     private Date DateCreate;
     private int UnitInStock;
     private boolean Published;
+    private boolean BestSaler;
 
-    @Override
-    public String toString() {
-        return "Product{" + "ProductId=" + ProductId + ", productName=" + productName + ", CatId=" + CatId + ", ShortDesc=" + ShortDesc + ", Description=" + Description + ", Price=" + Price + ", ProductImage=" + ProductImage + ", DateCreate=" + DateCreate + ", UnitInStock=" + UnitInStock + ", Published=" + Published + '}';
+    public Product(int ProductId, String productName, int CatId, String ShortDesc, String Description, float Price, String ProductImage, Date DateCreate, int UnitInStock, boolean Published, boolean BestSaler) {
+        this.ProductId = ProductId;
+        this.productName = productName;
+        this.CatId = CatId;
+        this.ShortDesc = ShortDesc;
+        this.Description = Description;
+        this.Price = Price;
+        this.ProductImage = ProductImage;
+        this.DateCreate = DateCreate;
+        this.UnitInStock = UnitInStock;
+        this.Published = Published;
+        this.BestSaler = BestSaler;
+    }
+
+    public Product() {
     }
 
     public int getProductId() {
@@ -107,16 +120,13 @@ public class Product {
         this.Published = Published;
     }
 
-    public Product(int ProductId, String productName, int CatId, String ShortDesc, String Description, float Price, String ProductImage, Date DateCreate, int UnitInStock, boolean Published) {
-        this.ProductId = ProductId;
-        this.productName = productName;
-        this.CatId = CatId;
-        this.ShortDesc = ShortDesc;
-        this.Description = Description;
-        this.Price = Price;
-        this.ProductImage = ProductImage;
-        this.DateCreate = DateCreate;
-        this.UnitInStock = UnitInStock;
-        this.Published = Published;
+    public boolean isBestSaler() {
+        return BestSaler;
     }
+
+    public void setBestSaler(boolean BestSaler) {
+        this.BestSaler = BestSaler;
+    }
+
+    
 }
