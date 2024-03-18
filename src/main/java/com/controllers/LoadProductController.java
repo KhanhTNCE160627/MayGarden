@@ -58,8 +58,7 @@ public class LoadProductController extends HttpServlet {
         String id = request.getParameter("pid");
         AdminProductDAO dao = new AdminProductDAO();
         Product a = dao.getProductById(id);
-        
-        request.setAttribute("detail", a);
+        request.setAttribute("detailproduct", a);
         request.getRequestDispatcher("EditProduct.jsp").forward(request, response);
     } 
 

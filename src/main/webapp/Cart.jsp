@@ -43,24 +43,32 @@
                                     <th>Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <form action="submit_form_action_url" method="POST">
                                 <c:forEach var="product" items="${cartProducts}">
                                     <tr class="text-center">
-                                        <td class="product-remove"><a href="DeleteCart?id=${product.getProductId()}"><span class="ion-ios-close"></span></a></td>
-                                        <td class="image-prod"><img class="img" src="./assets/images/${product.getProductImage()}" alt=""></td>
-                                        <td class="product-name"><h3>${product.getProductName()}</h3></td>
-                                        <td class="price">$${product.getPrice()}</td>
-                                        <td class="quantity">
-                                            <div class="input-group mb-3">
-                                                <input type="text" name="quantity" class="quantity form-control input-number" value="${product.getQuantity()}" >
-                                            </div>
-                                        </td>
-                                        <td class="total">$${product.getTotalPrice()}</td>
+                                    <input type="hidden" name="p_id" value="${product.getProductId()}"/>
+                                    <td class="image-prod"><img class="img" src="${product.getProductImage()}" alt="" style="width: 150px; height: 130px;"></td>
+                                    <td class="product-name"><h3>${product.getProductName()}</h3></td>
+                                    <td class="price">${product.getPrice()}</td>
+                                    <td class="input-group">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-minus">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <input onchange="this.form.submit()" type="type" name="quantity" class="form-control form-control-sm bg-secondary text-center" value="${product.getQuantity()}">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-plus">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="total">$ ${product.getTotalPrice()}</td>
+                                    <td class="product-remove"><a href="DeleteCart?id=${product.getProductId()}"><span class="ion-ios-close"></span></a></td>
                                     </tr><!-- END TR-->
                                 </c:forEach>
+                            </form>
 
-
-                            </tbody>
                         </table>
                     </div>
                 </div>

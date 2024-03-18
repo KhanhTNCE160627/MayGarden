@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.Date;
 
 /**
  *
@@ -67,17 +68,17 @@ public class CreateProduct extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String pid = request.getParameter("prodId");
-        String pname = request.getParameter("prodName");
-        String pcat = request.getParameter("catId");
-        String pshort = request.getParameter("shortDesc");
-        String pdesc = request.getParameter("description");
-        String pprice = request.getParameter("price");
-        String pidimage = request.getParameter("prodImage");
-        String pdate = request.getParameter("dateCreate");
-        String punit = request.getParameter("unitStock");
-        String ppublish = request.getParameter("published");
-        String pbest = request.getParameter("betSeller");
+         int pid = Integer.parseInt(request.getParameter("prodId"));
+            String pname = request.getParameter("prodName");
+            int pcat = Integer.parseInt(request.getParameter("catId"));
+            String pshort = request.getParameter("shortDesc");
+            String pdesc = request.getParameter("description");
+            float pprice = Float.parseFloat(request.getParameter("price"));
+            String pidimage = request.getParameter("prodImage");
+            Date pdate = Date.valueOf(request.getParameter("dateCreate"));
+            int punit = Integer.parseInt(request.getParameter("unitStock"));
+            boolean ppublish = Boolean.parseBoolean(request.getParameter("published"));
+            boolean pbest = Boolean.parseBoolean(request.getParameter("bestSeller"));
         
         AdminProductDAO dao = new AdminProductDAO();
         dao.createProduct(pid, pname, pcat, pshort, pdesc, pprice, pidimage, pdate, punit, ppublish, pbest);

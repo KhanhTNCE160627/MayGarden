@@ -48,7 +48,7 @@
         <!-- Modal footer -->
         <div class="modal-footer">
             <button type="submit" class="btn btn-primary" value="Edit" >Save</button>
-            <button type="button" class="btn btn-danger" value="Cancel" data-dismiss="modal">Close</button>
+            <a href="Account" class="btn btn-danger"  style="text-decoration:none;">Back to List</a>
         </div>
     </form>
 </html>

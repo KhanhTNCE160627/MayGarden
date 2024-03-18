@@ -28,7 +28,7 @@
         </form>
     </div>
     <!-- The Modal -->
-    <div class="modal" id="myModal">
+    <div class="modal" id="myModalAdd">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Modal Header -->
@@ -88,7 +88,7 @@
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Categories.getCatName()}</td>
                     <td style="border-right: 1px solid #333; border-bottom: 1px solid #333;">${Categories.getDescription()}</td>
                     <td style="border-bottom: 1px solid #333;" >
-                        <a  href="LoadCategory?CatId=${Categories.getCatId()}" class="btn btn-success" style="padding: 3px;  text-decoration: none">Edit</a> |
+                        <a  href="LoadCategory?CatId=${Categories.getCatId()}" class="btn btn-success" style="padding: 3px 16px;  text-decoration: none">Edit</a> |
                         <a href="DetailCategory?CatId=${Categories.getCatId()}" class="btn btn-warning" style="padding: 3px; text-decoration: none">Details</a> |
                         <a href="DeleteCategory?CatId=${Categories.getCatId()}" class="btn btn-danger" style="padding: 3px; text-decoration: none">Delete</a>
                     </td>
